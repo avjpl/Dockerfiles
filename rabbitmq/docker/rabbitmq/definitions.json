@@ -1,0 +1,56 @@
+{
+  "rabbit_version": "3.6.3",
+  "users": [
+    {
+      "name": "admin",
+      "password": "password",
+      "password_hash": "QKDSxLkBj+R4CBFpDU1/s54bnGI=",
+      "tags": "administrator"
+    },
+    {
+      "name": "guest",
+      "password": "guest",
+      "password_hash": "waGcmx+bVff5DqWg3PDCG98VH88=",
+      "tags": "administrator"
+    }
+  ],
+  "vhosts": [
+    {
+      "name": "/"
+    },
+    {
+      "name": "example"
+    }
+  ],
+  "permissions": [
+    {
+      "user": "admin",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "guest",
+      "vhost": "/",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    },
+    {
+      "user": "admin",
+      "vhost": "example",
+      "configure": ".*",
+      "write": ".*",
+      "read": ".*"
+    }
+  ],
+  "parameters": [
+  ],
+  "policies": [
+  ],
+  "queues": [
+  ],
+  "exchanges": [
+  ]
+}
