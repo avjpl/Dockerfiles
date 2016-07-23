@@ -80,10 +80,14 @@ RUN ln -sf /usr/lib/rabbitmq/lib/rabbitmq_server-$RABBITMQ_VERSION/plugins /plug
 
 # enable management plugin
 RUN rabbitmq-plugins enable --offline rabbitmq_management
+RUN rabbitmq-plugins enable --offline rabbitmq_management_visualiser
+RUN rabbitmq-plugins enable --offline rabbitmq_stomp
+RUN rabbitmq-plugins enable --offline rabbitmq_mqtt
+RUN rabbitmq-plugins enable --offline rabbitmq_amqp1_0
 
 ADD ./docker/rabbitmq/rabbitmq.config /etc/rabbitmq/
 ADD ./docker/rabbitmq/definitions.json /etc/rabbitmq/
 ADD ./docker/supervisor/rabbitmq.conf /etc/supervisor/conf.d/
 
-EXPOSE 4369 5671 5672 25672
 CMD /usr/bin/supervisord -n
+EXPOSE 22 5672 15672 25672 1883 61613
