@@ -30,7 +30,7 @@ docker run --name mongodb -d -p 27017:27017 mongo
 Elastic Search
 
 ```
-docker run -t -p 9200:9200 -p 9300:9300 elasticsearch
+docker run -t -p 9200:9200 -p 9300:9300 --name elasticsearch elasticsearch
 ```
 
 Install plugins
